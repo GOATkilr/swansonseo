@@ -192,7 +192,7 @@
         })
         .finally(function () {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Send My Inquiry';
+          submitBtn.innerHTML = 'Send My Inquiry &mdash; It\u2019s Free';
         });
     });
 
@@ -210,7 +210,7 @@
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     // Add fade-in class to animatable elements
     var animatable = document.querySelectorAll(
-      '.service-card, .process-step, .stat, .testimonial, .about-photo, .about-content, .contact-form, .contact-info'
+      '.service-card, .process-step, .stat, .about-photo, .about-content, .contact-form, .contact-info, .client-logo, .results-cta'
     );
 
     animatable.forEach(function (el) {
@@ -235,5 +235,46 @@
     animatable.forEach(function (el) {
       fadeObserver.observe(el);
     });
+  }
+
+  // --------------------------------------------------------
+  // Stat number count-up animation
+  // --------------------------------------------------------
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var statNumbers = document.querySelectorAll('.stat-number');
+
+    if (statNumbers.length) {
+      var statObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var text = el.textContent.trim();
+            var match = text.match(/^(\d+)(\+?)$/);
+            if (match) {
+              var target = parseInt(match[1], 10);
+              var suffix = match[2] || '';
+              var duration = 1200;
+              var start = performance.now();
+              el.textContent = '0' + suffix;
+
+              function step(now) {
+                var progress = Math.min((now - start) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target) + suffix;
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                }
+              }
+              requestAnimationFrame(step);
+            }
+            statObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      statNumbers.forEach(function (el) {
+        statObserver.observe(el);
+      });
+    }
   }
 })();

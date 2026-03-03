@@ -4,8 +4,8 @@
   "description": "AI-fluent SEO consulting and paid marketing services by Stanford Swanson.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1a365d",
+  "background_color": "#0b1120",
+  "theme_color": "#0b1120",
   "icons": [
     {
       "src": "/images/favicon-32x32.png",
