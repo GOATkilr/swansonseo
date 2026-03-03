@@ -192,7 +192,7 @@
         })
         .finally(function () {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = 'Send My Inquiry &mdash; It\u2019s Free';
+          submitBtn.textContent = 'Send it over';
         });
     });
 
