@@ -655,40 +655,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* Client logos / brands */
-.clients-worked-with {
-  margin-bottom: var(--space-3xl);
-  text-align: center;
-}
-
-.clients-heading {
-  font-size: var(--text-lg);
-  color: var(--color-text-secondary);
-  font-weight: 500;
-  margin-bottom: var(--space-lg);
-}
-
-.client-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-md) var(--space-xl);
-  align-items: center;
-}
-
-.client-logo {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-  background: var(--color-bg-card);
-}
-
 .results-cta {
   text-align: center;
 }

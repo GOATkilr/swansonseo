@@ -210,7 +210,7 @@
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     // Add fade-in class to animatable elements
     var animatable = document.querySelectorAll(
-      '.service-card, .process-step, .stat, .about-photo, .about-content, .contact-form, .contact-info, .client-logo, .results-cta'
+      '.service-card, .process-step, .stat, .about-photo, .about-content, .contact-form, .contact-info, .results-cta'
     );
 
     animatable.forEach(function (el) {
