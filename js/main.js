@@ -188,7 +188,7 @@
         })
         .catch(function () {
           formStatus.className = 'form-status error';
-          formStatus.textContent = 'Something went wrong. Please try again or email stanford@swansonseo.com directly.';
+          formStatus.textContent = 'Something went wrong. Please try again or email sswanson.seo@gmail.com directly.';
         })
         .finally(function () {
           submitBtn.disabled = false;
